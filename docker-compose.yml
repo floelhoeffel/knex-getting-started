@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/Users/prisma/code/knex-getting-started/data
+    container_name: knex-getting-started
+volumes:
+  db:
+    driver: local
